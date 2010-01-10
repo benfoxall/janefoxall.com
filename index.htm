@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Jane Foxall</title>
+	
+	<style type="text/css" media="screen">
+	body{font-family:helvetica,arial,sans-serif;width:70%;margin:5em auto;font-size:14px;}
+	a{color:#aaa;text-decoration:none;}
+	h1{font-weight:normal;font-size:1.6em;color:#555;margin:0;padding:0;float:left;}
+	h2{font-size:1.1em;}
+	p#links{float:right;margin:0;padding:0;color:#ddd;margin-top:.5em;}
+	p#navigation{float:left;margin-top:.5em;margin-left:10em;padding:0;position:absolute;text-transform:uppercase;color:#ddd;}
+	p#navigation a{text-decoration:none;padding:.4em;}
+	p#navigation .prev_next{margin-top:1em;display:block;font-size:.9em;}
+	ol{padding:0;padding-top:4em;margin-left:10em;}
+	li{list-style:none;font-size:.9em;color:#555;}
+	</style>
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+		google.load("prototype", "1.6");
+		google.load("scriptaculous", "1.8.3");
+		google.setOnLoadCallback(function(){
+			current = document.location.hash.gsub('#','');
+			//go through the sections - generating links as we go
+			$$('li').each(function(section,i){
+				link = new Element('a', {href:'#' + section.identify()});
+				link.update(i+1).observe('click',function(e){
+					section.siblings().each(Element.hide);
+					$(section).appear();
+				})
+				$('pages').insert({bottom:link})
+				
+				//hide section if appropriate
+				if(current != ''){
+					if(section.identify() != current){
+						section.hide();
+					}
+				}else{
+					if(i != 0){
+						section.hide();
+					}
+				}
+			})
+			$('previous').observe('click',function(e){
+				Event.stop(e);
+			})
+		})
+	</script>
+	
+</head>
+
+<body>
+	
+	<h1>Jane Foxall</h1>
+	
+	<p id="navigation">
+		<small>
+			<span id="pages"></span>
+			<span class="prev_next">
+				<a href="#prev" id="previous">
+					&lt; Previous 
+				</a>
+				|
+				<a href="#next" id="next">
+					Next &gt;
+				</a>
+			</span>
+		</small>
+	</p>
+	
+	<p id="links">
+		<small>
+			<a href="#cv">
+				CV
+			</a>
+			|
+			<a href="#contact">
+				Contact Details
+			</a>
+		</small>
+	</p>
+	
+	<ol>
+		<li id="hello">
+			<p>
+				<img src="images/jane.jpg" width="302" height="225" alt="Jane"/>
+			</p>
+			<h2>My name is Jane Foxall. I work in theater.</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+		</li>
+		<li id="mother-goose">
+			<p>
+				<img src="images/duck.png" width="236" height="267" alt="Duck" />
+			</p>
+			<h2>Mother Goose</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		</li>
+		<li id="section-three">
+			<p>
+				<img src="images/pictures.png" width="349" height="262" alt="Pictures" />
+			</p>
+			<h2>Section Three</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		</li>
+		<li id="section-four">
+			<h2>Section 4</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		</li>
+	</ol>
+
+
+</body>
+</html>
