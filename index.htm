@@ -18,7 +18,16 @@
 	p#navigation .prev_next{margin-top:1em;display:block;font-size:.9em;}
 	ol{padding:0;padding-top:4em;margin-left:10em;}
 	li{list-style:none;font-size:.9em;color:#555;}
+	p.closed-up,p.closed-up-inset{margin-top:-0.5em;}
+	p.closed-up-inset,p.inset{margin-left:3em;}
 	</style>
+<!--[if IE]>
+  <style>
+	p.closed-up,p.closed-up-inset{margin-top:-1.1em;}
+  </style>  
+<![endif]-->
+
+
 	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
 	<script type="text/javascript">
 		google.load("prototype", "1.6");
@@ -49,17 +58,6 @@
 				Event.stop(e);
 			})
 		})
-		
-		var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-1591924-7']);
-		  _gaq.push(['_trackPageview']);
-
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
-		  })();
-		
 	</script>
 	
 </head>
@@ -100,22 +98,46 @@
 			<!-- <p>
 				<img src="images/jane.jpg" width="302" height="225" alt="Jane"/>
 			</p> -->
-			<h2>My name is Jane Foxall. I work in theater.</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+			<h2>I am Jane Foxall, an experienced Stage Manager.</h2>
+			<p>I am looking for posts in stage management</p>
+			<p class="closed-up">
+    I specialise in costume and prop-making.
+   </p>
+			<p class="closed-up">
+    I work in television and in theatre.
+   </p>
+      <p class="closed-up">
+    I will work anywhere in the UK and am presently based in Glasgow.
+      </p>
+</p>
 		</li>
-		<li id="mother-goose">
+		<li id="stage-management">
 			<!-- <p>
 				<img src="images/duck.png" width="236" height="267" alt="Duck" />
 			</p> -->
-			<h2>Mother Goose</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<h2>Stage Management Credits</h2>
+			<p style="font-weight:bold;">Stage Manager</p>
+			<p class="inset">Mother Goose &ndash; 2009 Pantomime at the Byre Theatre, St Andrews</p>
+<p class="closed-up-inset">First you&rsquo;re born &ndash; 2009 Byre Theatre, St Andrews</p>
+<p class="closed-up-inset">Little Light &ndash; 2008&ndash;9 Touring production</p>
+<p style="font-weight:bold;">Assistant Stage Manager</p>
+<p class="inset">The Bed before Yesterday &ndash; The Mill at Sonning Theatre, Reading</p>
+<p class="closed-up-inset">Deadly Murder &ndash; The Mill at Sonning Theatre, Reading</p>
+<p class="closed-up-inset">A Sentimental Journey: Doris Day &ndash; The Mill at Sonning Theatre, Reading</p>
+<p class="closed-up-inset">Cinderella &ndash;  Pantomime at the Byre Theatre, St Andrews</p>
+<p class="closed-up-inset">The Twits &ndash; Byre Theatre St Andrews</p>
+<p class="closed-up-inset">Not about Heroes &ndash; The Byre Theatre, St Andrews</p>
+<p class="closed-up-inset">The 39 Steps &ndash; Byre Theatre, St Andrews</p>
+
 		</li>
-		<li id="section-three">
+		<li id="television">
 			<!-- <p>
-				<img src="images/pictures.png" width="349" height="262" alt="Pictures" />
+ 				<img src="images/pictures.png" width="349" height="262" alt="Pictures" />
 			</p> -->
-			<h2>Section Three</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<h2>Television</h2>
+<p class="closed-up-inset">Channel 4, The Friday Night Project &ndash; Art Department, Costumes and props</p>
+<p class="closed-up-inset">Channel 4, Musicool &ndash; Production runner, Prop buyer and ASM on live show</p>
+
 		</li>
 		<li id="section-four">
 			<h2>Section 4</h2>
