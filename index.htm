@@ -56,6 +56,31 @@
 				}
 			})
 			$('previous').observe('click',function(e){
+				//go through looking for the visible one
+				$$('li').each(function(li){
+					if(li.visible()){
+						//if there is another to go to
+						if(li.previous()){
+							li.hide();
+							$(li.previous()).appear();
+						}
+						throw $break;
+					}
+				})
+				Event.stop(e);
+			})
+			$('next').observe('click',function(e){
+				//go through looking for the visible one
+				$$('li').each(function(li){
+					if(li.visible()){
+						//if there is another to go to
+						if(li.next()){
+							li.hide();
+							$(li.next()).appear();
+						}
+						throw $break;
+					}
+				})
 				Event.stop(e);
 			})
 		})
