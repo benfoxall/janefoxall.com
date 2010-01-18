@@ -44,6 +44,16 @@ p.block-indent2{margin-top:1em;}
 
 	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
 	<script type="text/javascript">
+		
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-1591924-7']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+		})();
+
 		google.load("prototype", "1.6");
 		google.load("scriptaculous", "1.8.3");
 		google.setOnLoadCallback(function(){
@@ -54,6 +64,7 @@ p.block-indent2{margin-top:1em;}
 				link.update(i+1).observe('click',function(e){
 					section.siblings().each(Element.hide);
 					$(section).appear();
+					_gaq.push(['_trackEvent','navigate',$('section').identify()]);
 				})
 				$('pages').insert({bottom:link})
 				
@@ -81,6 +92,7 @@ p.block-indent2{margin-top:1em;}
 					}
 				})
 				Event.stop(e);
+				_gaq.push(['_trackEvent','navigate','previous']);
 			})
 			$('next').observe('click',function(e){
 				//go through looking for the visible one
@@ -95,7 +107,11 @@ p.block-indent2{margin-top:1em;}
 					}
 				})
 				Event.stop(e);
+				_gaq.push(['_trackEvent','navigate','next']);
 			})
+			
+			
+			
 		})
 	</script>
 	
